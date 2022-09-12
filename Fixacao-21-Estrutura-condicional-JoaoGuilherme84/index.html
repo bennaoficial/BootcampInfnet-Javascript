@@ -1,0 +1,31 @@
+<!-- Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa. Caso sexo seja “F” e
+estado civil seja “CASADA”, solicitar o tempo de casada (anos). Ao final exiba todas as informações solicitadas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let nome = prompt ('Digite seu Nome:');
+    let sexo = prompt ('Digite o seu sexo: (M - Masculino / F - Feminino)').toUpperCase();
+    let estadoCivil = prompt ('Digite seu estado civil (C- Casado / S - Solteiro)').toUpperCase();
+    
+    if (sexo=='F' && estadoCivil=='C'){
+      let tempoCasado = prompt('Digite o tempo de casada:');
+      alert(`Muito obrigado pelas informações: ${nome}: ${sexo}, casada a ${tempoCasado} anos`);
+    } else if (sexo=='M' || sexo=='F'){
+        alert(`Muito obrigado pelas informações:
+              Nome: ${nome}
+              Sexo: ${sexo}
+              Estado Civil: ${estadoCivil}`);
+    } else {
+      alert(`Digite suas informações novamente, ${nome}.`);
+    }
+  </script>
+</body>
+</html>
