@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script>
+    // Adicione uma variáve de tipo string para salvar seu nome
+    // Adicione uma variável de tipo inteiro para salvar sua idade
+    // Adicione uma ou mais variáveis para armazenar os dados do seu nascimento e salvá-lo no formato de data.
+    // Utilize a função prompt para dinamizar essas variáveis
+    // Utilize a função console para exibir uma mensagem informando seu nome, idade e data de nascimento.
+   var nome = prompt("Digite seu nome:");
+   var idade = prompt("Digite sua idade:"); 
+   var dataDia = prompt ('Digite o dia do seu nascimento:');
+   var dataMes = prompt ('Digite o número do mês do seu nascimento:');
+   var dataAno = prompt ('Digite o ano do seu nascimento:');
+    var data = [dataMes, dataDia, dataAno];
+    var nascimento = new Date(data);
+    
+    let day = nascimento.getDate();
+    let month = nascimento.getMonth() + 1;
+    let year = nascimento.getFullYear();
+    let aniversario = `${day}/${month}/${year}`;
+    
+    console.log (nome, idade)
+    console.log(aniversario)
+  
+  </script>
+</body>
+
+</html>
