@@ -1,0 +1,59 @@
+<!-- Escreva um algoritmo que leia o número de identificação, as 3 notas obtidas por um aluno nas
+3 verificações e a média dos exercícios que fazem parte da avaliação, e calcule a média de
+aproveitamento, usando a fórmula:
+MA = (nota1 + nota2 * 2 + nota3 * 3 + ME)/7
+
+A atribuição dos conceitos obedece a tabela abaixo. O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, o conceito correspondente e a mensagem 'Aprovado' se o conceito for A, B ou C, e 'Reprovado' se o conceito for D ou E.
+
+Média de aproveitamento Conceito
+>= 90 A
+>= 75 e < 90 B
+>= 60 e < 75 C
+>= 40 e < 60 D
+< 40 E  
+
+DICA: Lembre-se que MA é o valor final e ME é a média dos exercícios, você precisará criar uma entrada para cada nota e uma entrada para a ME que é a média do exercício.;
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let numeroId = prompt ('Digite seu numero de Identificação');
+    let nota1 = parseFloat (prompt('Digite a nota da primeira prova').replace(',','.'));
+    let nota2 = parseFloat (prompt('Digite a nota da segunda prova').replace(',','.'));
+    let nota3 = parseFloat (prompt('Digite a nota da terceira prova').replace(',','.'));
+    let mE = parseFloat (prompt('Digite a média de exercícios').replace(',','.'));
+    let mediaFinal= ((nota1 + nota2*2 + nota3*3 + mE)/7).toFixed(2);
+    let mA= ""
+
+      if (mediaFinal>=90){
+        mA = 'A - Aprovado'
+      } else if (mediaFinal>=75 && mediaFinal<90){
+        mA = 'B - Aprovado'
+      } else if (mediaFinal>=60 && mediaFinal<75){
+        mA = 'C - Aprovado'
+      } else if (mediaFinal>=40 && mediaFinal<60){
+        mA = 'D - Reprovado'
+      } else if (mediaFinal<40){
+        mA = 'E - Reprovado'
+      } else {
+        alert ('nota invalida');
+      }
+      alert (`Aluno: ${numeroId}:
+              Primeira Prova:        ${nota1}
+              Segunda Prova:         ${nota2}
+              Terceira Prova:        ${nota3}
+              Média de Exercícios:   ${mE}
+              Média Final:           ${mediaFinal}
+              Obteve conceito:       ${mA}`);
+    
+  </script>
+</body>
+</html>
