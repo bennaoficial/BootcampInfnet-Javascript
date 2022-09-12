@@ -1,0 +1,30 @@
+<!-- Faça um programa que receba a idade de dez pessoas e que calcule e mostre a quantidade de pessoas com idade maior ou igual a 18 anos.
+
+USE o Array filter para filtrar as idades.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var idade = [];
+    let j;
+    for (j = 0; j < 10; j++){
+      var addIdade = prompt(`Digite a idade da pessoa ${j+1}`);
+     idade.push(addIdade);
+    }
+    function maioridade(valor) {
+  return valor >= 18;}
+    var vetorIdade = idade.filter(maioridade);
+        
+      // alert (`${vetorIdade}`);
+      alert (idade);
+      alert (vetorIdade);
+  </script>
+</body>
+</html>
