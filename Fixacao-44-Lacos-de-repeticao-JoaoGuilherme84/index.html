@@ -1,0 +1,61 @@
+<!-- Faça um script que receba a idade de 15 pessoas e que calcule e mostre:
+a) A quantidade de pessoas em cada faixa etária;
+b) A percentagem de pessoas na primeira e na última faixa etária, com relação ao total de pessoas: 
+
+Até 15 anos
+De 16 a 30 anos
+De 31 a 45 anos
+De 46 a 60 anos
+Acima de 61 anos
+
+DICA: Use o Array Filter para filtrar, pegue a variável de retorno do filter e use nela o .length. Você precisará fazer 5 filters um para cada faixa etária então haverá 5 variáveis recebendo filter do mesmo array de idades, porém cada filter usa uma condicional específica de faixa etária. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var idade = []; 
+    for (var j = 0; j < 15 ; j++) {
+      var addIdade = parseFloat (prompt(`Digite a idade da pessoa ${j+1}`));
+     idade.push(addIdade);
+    }
+    function idadeAte15(valorAte15) {
+    return valorAte15 <= 15; }
+    var vetorIdadeAte15 = idade.filter(idadeAte15);
+    
+    function idadeDe16Ate30(valorDe16Ate30) {
+      return valorDe16Ate30 >= 16 && valorDe16Ate30 <= 30 ;}
+    var vetorIdadeDe16Ate30 = idade.filter(idadeDe16Ate30);
+    
+    function idadeDe31Ate45(valorDe31Ate45) {
+      return valorDe31Ate45 >= 31 && valorDe31Ate45 <= 45; }
+    var vetorIdadeDe31Ate45 = idade.filter(idadeDe31Ate45);
+    
+    function idadeDe46Ate60(valorDe46Ate60) {
+      return valorDe46Ate60 >= 46 && valorDe46Ate60 <= 60 ;}
+    var vetorIdadeDe46Ate60 = idade.filter(idadeDe46Ate60);
+    
+    function idadeMaiorIgual61(valorMaiorIgual61) {
+      return valorMaiorIgual61 >= 61 ;}
+    var vetorIdadeMaiorIgual61 = idade.filter(idadeMaiorIgual61);
+        
+
+    var porcentagemAte15 = ((vetorIdadeAte15.length)*100/15).toFixed(2)
+    var porcentagemDepois61 =  ((vetorIdadeMaiorIgual61.length)*100/15).toFixed(2)
+   alert (`Temos em cada faixa etária:
+           1- Até 15 anos =       ${vetorIdadeAte15.length}pessoas
+           2- de 16 até 30 anos = ${vetorIdadeDe16Ate30.length}pessoas
+           3- de 31 até 45 anos = ${vetorIdadeDe31Ate45.length}pessoas
+           4- de 46 até 60 anos = ${vetorIdadeDe46Ate60.length}pessoas
+           5- acima de 61 anos =  ${vetorIdadeMaiorIgual61.length}pessoas`);
+    
+    alert (`Temos ${porcentagemAte15}% até 15 anos e ${porcentagemDepois61}% com mais de 61 anos. `);
+  
+  </script>
+</body>
+</html>
