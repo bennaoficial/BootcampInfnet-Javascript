@@ -1,0 +1,28 @@
+<!-- Escreva um script que receba inteiro e mostra os números pares e ímpares (separados), de 1 até esse inteiro. 
+
+DICA: Use o operador módulo para te auxiliar aqui. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let par = [];
+    let impar = [];
+    var j = parseFloat(prompt ('Digite um Numero inteiro'));
+    for (var i = 0; i < j; i++ ){
+      if (i % 2 == 0) {
+        par.push (i)
+      } else {
+        impar.push (i)
+      }
+    }
+    console.log (par)
+    console.log (impar)
+  </script>
+</body>
+</html>
