@@ -1,0 +1,63 @@
+<!-- Aqui estamos em um exercício um pouco mais difícil, se sentir dificuldade, reassista as aulas antes de tentar fazê-lo.
+
+Faça um programa que apresente o menu de opções a seguir:  
+
+Menu de opções:  
+
+1. Média aritmética
+2. Média ponderada
+3. Sair  
+Digite a opção desejada:
+
+Na opção 1: receber duas notas, calcular e mostrar a média aritmética.
+Na opção 2: receber três notas e seus respectivos pesos, calcular e mostrar a média ponderada.
+Na opção 3: sair do programa.  
+Verifique a possibilidade de opção inválida, mostrando uma mensagem.   -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var option = parseFloat(prompt(`Menu de opções:
+                                    1. Média aritmética
+                                    2. Média ponderada
+                                    3. Sair  
+                                    Digite a opção desejada:`));
+    var notas = [];
+    var somaNotas = 0;
+    var divisor = 0;
+    
+    if (option == 1){
+      for (var j = 0; j < 2 ; j++) {
+      var addNotas = parseFloat(prompt(`digite a nota ${j+1}`).replace(',','.'));
+     notas.push(addNotas);
+        somaNotas = (somaNotas + notas[j]);
+      }
+      var mediaAritmetica = somaNotas/ j+1
+     alert (`Suas notas foram ${notas}, portanto sua média foi ${mediaAritmetica}`);
+
+    }else if (option == 2){
+        for (var j = 0; j < 3 ; j++) {
+      var addNotas = parseFloat(prompt(`digite a nota ${j+1}`).replace(',','.'));
+     notas.push(addNotas);
+     
+        somaNotas = (somaNotas + notas[j]*(j+1));
+        divisor = divisor + (j+1) };
+     
+      var mediaPonderada = somaNotas/divisor
+      
+     alert (`Suas notas foram ${notas}, portanto sua média foi ${mediaPonderada}`);
+      
+    }else if (option == 3){
+      alert (`Opção digitada ${option} - Sair programa`)
+    }else {
+      alert (`Opção digitada INVÁLIDA: ${option}`)
+    }
+  </script>
+</body>
+</html>
