@@ -1,0 +1,28 @@
+<!-- Faça um programa que receba dez números e usando laços de repetição calcule e mostre a quantidade de números entre 30 e
+90. 
+DICA: Use filter novamente aqui.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var numeros = []; 
+    for (var j = 0; j < 10 ; j++) {
+      var addNumero = parseFloat (prompt(`Digite 1 numero`));
+     numeros.push(addNumero);
+    }
+    function numeroDe30Ate90(valorDe30Ate90) {
+    return valorDe30Ate90 >= 30 && valorDe30Ate90 <= 90 ;}
+    var vetorDe30Ate90 = numeros.filter(numeroDe30Ate90);
+    alert (`Temos no total ${vetorDe30Ate90.length} numeros no intervalo de 30 até 90`);
+  
+  </script>
+  
+</body>
+</html>
