@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #produtos {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+
+    }
+</style>
+
+<body>
+<div id="produtos">
+    
+</div>
+   
+
+    <div id="carrinho">
+
+    </div>
+    
+    <script>
+
+        let vetor = 
+        [
+        produto = ['Produto_001', 19.50 , 100, 0],
+        produto2 = ['Produto_002', 37.50 , 100, 0],
+        produto3 = ['Produto_003', 25.00 , 100, 0]
+        ];
+
+
+  for (let i = 0; i < 3; i++){
+        // criar a pasta div
+     var newDiv = document.createElement(`div`)
+         newDiv.id= `produto_${i}`
+         //criar botao
+         button = document.createElement("button")
+        //  button.onclick = addCarrinho();
+         button.innerText = "adicionar ao carrinho";
+// criar elementos do produto
+     var h1 = document.createElement("h1");
+      h1.innerText = vetor[i][0];
+
+      h2 = document.createElement("h2");
+      h2.innerText = `Preço: ${vetor[i][1]}`;
+
+      p1 = document.createElement("p");
+      p1.innerText = `Estoque: ${vetor[i][2]}`;
+
+      p2 = document.createElement("p");
+      p2.innerText = `Quantidade: ${vetor[i][3]}`;
+
+     var img_produto = document.createElement("img");
+      img_produto.src = `imgs${i}.png`;
+
+        document.getElementById("produtos").appendChild(newDiv);
+        document.getElementById(`produto_${i}`).appendChild(h1);
+        document.getElementById(`produto_${i}`).appendChild(img_produto);
+        document.getElementById(`produto_${i}`).appendChild(h2);
+        document.getElementById(`produto_${i}`).appendChild(p1);
+        document.getElementById(`produto_${i}`).appendChild(p2);
+        document.getElementById(`produto_${i}`).appendChild(button);
+   }
+    </script>
+</body>
+</html>
